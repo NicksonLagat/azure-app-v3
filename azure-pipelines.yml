@@ -18,7 +18,7 @@ steps:
 - script: |
     npx create-react-app my-app
     cd my-app
-    npm install
+    npm install --save-dev eslint-webpack-plugin@1.9.0
     npm update jest-worker
     npm run build
   displayName: 'create-react-app, npm install and build'
