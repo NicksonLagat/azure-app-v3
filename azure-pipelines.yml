@@ -1,5 +1,5 @@
 # Node.js with React
-# Build a Node.js project that uses React.
+# Build a Node.js project that uses React and create-react-app.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
@@ -16,6 +16,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    npx create-react-app my-app
+    cd my-app
     npm install
     npm run build
-  displayName: 'npm install and build'
+  displayName: 'create-react-app, npm install and build'
