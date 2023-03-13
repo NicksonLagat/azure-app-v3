@@ -19,5 +19,6 @@ steps:
     npx create-react-app my-app
     cd my-app
     npm install
+    npm update jest-worker
     npm run build
   displayName: 'create-react-app, npm install and build'
