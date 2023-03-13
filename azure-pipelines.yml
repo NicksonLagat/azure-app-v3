@@ -1,0 +1,24 @@
+# Node.js with React
+# Build a Node.js project that uses React and create-react-app.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npx create-react-app my-app
+    cd my-app
+    npm install --save-dev eslint-webpack-plugin@1.9.0
+    npm update jest-worker
+    npm run build
+  displayName: 'create-react-app, npm install and build'
